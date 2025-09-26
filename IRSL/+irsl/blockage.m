@@ -41,24 +41,28 @@ for k = 1:numBlocks
     L = blocks(k,3);
     W = blocks(k,4);
 
-    % solid black rectangle
+    % solid black rectangle with white outline
     rectangle('Position',[x-L/2, y-W/2, L, W], ...
               'FaceColor','k','EdgeColor','w','LineWidth',1.5);
 end
 
 %% Text Annotations
+% Velocity display (right side, white)
 velText = annotation('textbox',[0.8 0.9 0.2 0.05],...
     'String','Velocity: 0 m/s','EdgeColor','none',...
     'Color','w','FontSize',10,'FontWeight','bold');
 
-barTextStr = "Barricades:\n";
+% Barricade coordinates (left side, multiline)
+barTextLines = cell(numBlocks+1,1);
+barTextLines{1} = 'Barricades:';
 for k = 1:numBlocks
-    barTextStr = barTextStr + ...
-        sprintf('[x=%.1f, y=%.1f, L=%.1f, W=%.1f]\n', blocks(k,:));
+    barTextLines{k+1} = sprintf('[x=%.1f, y=%.1f, L=%.1f, W=%.1f]', blocks(k,:));
 end
+
 barText = annotation('textbox',[0.05 0.7 0.25 0.2],...
-    'String',char(barTextStr),'EdgeColor','none',...
-    'Color','w','FontSize',9,'FontWeight','bold');
+    'String',barTextLines,...
+    'EdgeColor','none','Color','w',...
+    'FontSize',9,'FontWeight','bold');
 
 %% Pathline
 hPath = plot(nan,nan,'b-','LineWidth',1.5);
