@@ -8,26 +8,39 @@ We are developing a MATLAB Library for realistic Indian road simulation with the
 
 ### Asset Library
 
-3D potholes, barricades, and roadblocks
+* 3D potholes, barricades, and roadblocks
 
-Vehicles such as autorickshaws
+* Vehicles such as autorickshaws
 
-Authentic Indian road signs and textures
+* Authentic Indian road signs and textures
 
 ### Workflow Automation
 
-Custom MATLAB Toolbox functions for quick scenario creation:
+* Custom MATLAB Toolbox functions for quick scenario creation:
 
-addPothole – Insert potholes on selected roads
+    * addPothole – Insert potholes on selected roads
 
-generateIndianJunction – Generate realistic Indian-style intersections
+    * generateIndianJunction – Generate realistic Indian-style intersections
 
-randomizeBarricades – Place barricades dynamically for varied conditions
+    * randomizeBarricades – Place barricades dynamically for varied conditions
 
 ### Integration & Compatibility
 
-Works with MATLAB’s Driving Scenario Designer and RoadRunner
+* Works with MATLAB’s Driving Scenario Designer and RoadRunner
 
-Supports OpenStreetMap (OSM) data for geographically accurate environments
+* Supports OpenStreetMap (OSM) data for geographically accurate environments
 
-Ensures high-fidelity modeling of India’s unique traffic conditions
+* Ensures high-fidelity modeling of India’s unique traffic conditions
+
+### 📂 Repository Contents
+
+* IRSL/ → MATLAB functions & toolbox assets
+
+* examples/ → Sample simulation scripts
+
+* docs/ → Usage guide & references (In near future)
+
+* assets/ → 3D models of potholes, barricades, vehicles, and road textures (In near future)
+
+### 🔗 Resources
+* Google Drive : https://drive.google.com/drive/folders/1uI2MtQxxC0Exia6PZgORqGm-ss_HOAyb?usp=drive_link
