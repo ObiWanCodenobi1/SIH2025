@@ -34,7 +34,7 @@ We are developing a **MATLAB Library** for realistic Indian road simulation with
 
 * Ensures high-fidelity modeling of India’s unique traffic conditions
 
-### 📂 Repository Contents
+### Repository Contents
 
 * IRSL/ → MATLAB functions & toolbox assets
 
