@@ -23,6 +23,8 @@ We are developing a **MATLAB Library** for realistic Indian road simulation with
     * generateIndianJunction – Generate realistic Indian-style intersections
 
     * randomizeBarricades – Place barricades dynamically for varied conditions
+      
+    * And many more...
 
 ### Integration & Compatibility
 
