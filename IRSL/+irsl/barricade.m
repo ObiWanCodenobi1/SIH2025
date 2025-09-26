@@ -1,8 +1,10 @@
-function [scenario, egoVehicle] = Barricade(barricades)
+function [scenario, egoVehicle] = Barricade(barricades, barricadeWidth)
 % Barricade: Simulation with one car and static barricades
-% INPUT: barricades -> Nx2 array of [x, y] positions
+% INPUT:
+%   barricades -> Nx2 array of [x, y] positions
+%   barricadeWidth -> width of each barricade (meters)
 % Road length: 100 m, 2 lanes, slightly wider for better view
-% Displays pathline, car speed, and barricade coordinates
+% Displays pathline, car velocity, and barricade coordinates
 % The car stops if it collides with a barricade
 
 %% Road parameters
@@ -46,13 +48,13 @@ hold on;
 xlim([0 roadLength]);
 ylim([-roadWidth roadWidth]);
 
-% Draw barricades as rectangles (black)
-barSize = [2 2]; % length x width
+% Draw barricades as rectangles (black) with user-defined width
+barLength = 2;               % fixed along road direction
 hBarr = gobjects(numBarr,1);
 for k = 1:numBarr
     x = barricades(k,1);
     y = barricades(k,2);
-    hBarr(k) = rectangle('Position',[x-barSize(1)/2, y-barSize(2)/2, barSize(1), barSize(2)],...
+    hBarr(k) = rectangle('Position',[x-barLength/2, y-barricadeWidth/2, barLength, barricadeWidth],...
         'FaceColor',[0 0 0],'EdgeColor','k');  % black fill, black edge
 end
 
@@ -60,9 +62,9 @@ end
 hPath = plot(nan,nan,'b-','LineWidth',2,'DisplayName','Ego Path');
 hCar = plot(nan,nan,'bo','MarkerFaceColor','b','MarkerSize',6);  % blue marker for current car
 
-% Speed display (right side)
-speedText = annotation('textbox',[0.85 0.8 0.12 0.05],...
-    'String','Speed: 0 m/s','EdgeColor','none','Color',[1 1 1],...
+% Velocity display (right side, white color)
+velocityText = annotation('textbox',[0.85 0.8 0.12 0.05],...
+    'String','Velocity: 0 m/s','EdgeColor','none','Color',[1 1 1],...
     'FontSize',10,'FontWeight','bold');
 
 % Barricade coordinates display (left side)
@@ -98,15 +100,15 @@ for i = 1:maxSteps
     hCar.XData = egoPos(1);
     hCar.YData = egoPos(2);
 
-    % Update speed display
+    % Update velocity display
     egoVel = norm(egoVehicle.Velocity);
-    speedText.String = sprintf('Ego: %.1f m/s', egoVel);
+    velocityText.String = sprintf('Velocity: %.1f m/s', egoVel);
 
     % Collision check with barricades
     for k = 1:numBarr
         barPos = barricades(k,:);
-        if abs(egoPos(1)-barPos(1)) <= (egoLength+barSize(1))/2 && ...
-           abs(egoPos(2)-barPos(2)) <= (egoWidth+barSize(2))/2
+        if abs(egoPos(1)-barPos(1)) <= (egoLength+barLength)/2 && ...
+           abs(egoPos(2)-barPos(2)) <= (egoWidth+barricadeWidth)/2
             disp('⚠️ Collision with barricade! Simulation stopped.');
             return
         end
