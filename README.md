@@ -1,4 +1,4 @@
-# A MATLAB-based solution is needed to simplify realistic Indian road simulations and enable better traffic planning and research.
+# <ins>A MATLAB-based solution is needed to simplify realistic Indian road simulations and enable better traffic planning and research.</ins>
 
 ### Indian urban traffic modeling struggles because current tools don’t capture real-world road challenges such as potholes, barricades, and erratic driving patterns. Existing approaches to creating digital twins are manual, slow, and lack realism.
 
