@@ -4,7 +4,7 @@
 
 ##  Our Solution
 
-We are developing a MATLAB Library for realistic Indian road simulation with the following features:
+We are developing a **MATLAB Library** for realistic Indian road simulation with the following features:
 
 ### Asset Library
 
