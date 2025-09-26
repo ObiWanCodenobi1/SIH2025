@@ -2,7 +2,7 @@
 
 ### Indian urban traffic modeling struggles because current tools don’t capture real-world road challenges such as potholes, barricades, and erratic driving patterns. Existing approaches to creating digital twins are manual, slow, and lack realism.
 
-##  Our Solution
+##  <ins>Our Solution</ins>
 
 We are developing a **MATLAB Library** for realistic Indian road simulation with the following features:
 
